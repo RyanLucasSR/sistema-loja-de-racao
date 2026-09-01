@@ -1,0 +1,2 @@
+<property name="javax.persistence.jdbc.user" value="SEU_USUARIO"/>
+<property name="javax.persistence.jdbc.password" value="SUA_SENHA"/>
