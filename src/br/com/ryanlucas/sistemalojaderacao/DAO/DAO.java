@@ -1,9 +1,8 @@
 package br.com.ryanlucas.sistemalojaderacao.DAO;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import br.com.ryanlucas.sistemalojaderacao.excecao.InvalidoException;
+
+import javax.persistence.*;
 import java.util.List;
 
 public class DAO <E>{
@@ -16,7 +15,7 @@ public class DAO <E>{
         try{
             emf = Persistence.createEntityManagerFactory("sistema-loja-racao");
         }catch(Exception e){
-            System.out.println("Erro ao iniciar!");
+            e.printStackTrace();
         }
     }
 
@@ -34,9 +33,8 @@ public class DAO <E>{
         return this;
     }
 
-    public DAO<E> fecharTransacao(){
+    public void fecharTransacao(){
         em.getTransaction().commit();
-        return this;
     }
 
     public DAO<E> salvar(E entidade){
@@ -57,6 +55,19 @@ public class DAO <E>{
         TypedQuery<E> query = em.createQuery(jpql, classe);
 
         return query.getResultList();
+    }
+
+    public int deletarProduto(Long id){
+        if(classe == null){
+            throw new InvalidoException("Produto invalido!");
+        }
+
+        String jpql = "DELETE FROM " + classe.getName() + " p WHERE p.id = :id";
+        Query query = em.createQuery(jpql);
+        query.setParameter("id", id);
+
+        int linhas = 0;
+        return linhas = query.executeUpdate();
     }
 
     public void fechar(){

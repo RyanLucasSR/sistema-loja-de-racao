@@ -1,0 +1,64 @@
+.conteudo{
+    -fx-background-color: #0C0C0CBB;
+}
+
+.titulo{
+    -fx-text-fill: #cda837;
+    -fx-font-size: 30px;
+}
+
+.botoes{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+    -fx-fonte-size: 20px;
+    -fx-min-width: 200px;
+    -fx-min-height: 30px;
+    -fx-background-radius: 30px;
+}
+
+.botoesProduto{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+    -fx-fonte-size: 20px;
+    -fx-min-width: 50px;
+    -fx-min-height: 30px;
+    -fx-background-radius: 30px;
+}
+
+.botoesRacao{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+    -fx-fonte-size: 20px;
+    -fx-min-width: 40px;
+    -fx-min-height: 20px;
+    -fx-background-radius: 30px;
+}
+
+.conteudoProduto{
+    -fx-pref-width: 250px;
+    -fx-pref-height: 40px;
+
+    -fx-font-size: 12px;
+    -fx-font-family: "Arial";
+
+    -fx-background-color: white;
+    -fx-border-color: gray;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+
+    -fx-padding: 8px;
+}
+
+.texto{
+    -fx-font-size: 12px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #cda837;
+
+    -fx-background-color: gray;
+}
+
+.tabela{
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+}
